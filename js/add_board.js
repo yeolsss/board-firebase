@@ -10,8 +10,6 @@ import {
 
 const db = getFirestore(app);
 
-const boardRef = collection(db, "board");
-
 const addBoard = document.querySelector("#add_board");
 const getBoard = document.querySelector("#get_board");
 
@@ -38,10 +36,4 @@ const createBoard = async () => {
     });
 };
 
-const fnGetBoard = async () => {
-  await getDocs(collection(db, "board")).then((refDoc) => {
-    refDoc.forEach((item) => {
-      console.dir(item.data());
-    });
-  });
-};
+const fnGetBoard = async () => {};

@@ -66,6 +66,8 @@ input:focus {
   --button-back-color: #81e6d9;
   --button-back-color-hover: #4fd1c5;
   --input-color: rgba(255, 255, 255, 0.8);
+  --button-back-color-del: #fa8072ff;
+  --button-back-color-del-hover: #c26359ff;
 }
 html {
   font-size: 62.5%;

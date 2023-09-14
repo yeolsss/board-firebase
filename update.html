@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>글수정</title>
+
+    <link rel="stylesheet" href="./css/write.css" />
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://nhn.github.io/tui.editor/latest/dist/cdn/theme/toastui-editor-dark.css"
+    />
+  </head>
+  <body>
+    <header class="board-header">
+      <h1 class="board-header__title">
+        <a class="board-header__link" id="home_btn" href="#">
+          Firebase 게시판
+        </a>
+      </h1>
+    </header>
+
+    <main class="create-data-wrapper">
+      <form>
+        <fieldset>
+          <legend>글작성 필드</legend>
+          <div class="create-data-group user-info">
+            <input type="hidden" id="user_id" name="user_id" value="" />
+            <label for="user_name">작성자</label>
+            <input
+              type="text"
+              id="user_name"
+              class="create-date_input"
+              required
+              value="익명"
+              placeholder="이름"
+            />
+          </div>
+          <div class="create-data-group title">
+            <label for="content_title">제목</label>
+            <input
+              type="text"
+              id="content_title"
+              class="create-date_input"
+              required
+              placeholder="제목을 입력해 주세요."
+            />
+          </div>
+          <div id="editor"></div>
+          <div id="submit_btn" class="submit-btn">
+            <a> 글수정 </a>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+
+    <script type="module" src="./js/firebase.js"></script>
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+    <script type="module" src="./js/update.js"></script>
+  </body>
+</html>

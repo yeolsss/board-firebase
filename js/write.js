@@ -27,7 +27,10 @@ const getDate = () => {
   let year = String(today.getFullYear()); // 년도
   let month = String(today.getMonth() + 1).padStart(2, "0"); // 월
   let date = String(today.getDate()).padStart(2, "0"); // 날짜
-  return `${year}.${month}.${date}`;
+  const hours = String(today.getHours()).padStart(2, "0");
+  const minutes = String(today.getMinutes()).padStart(2, "0");
+  const seconds = String(today.getSeconds()).padStart(2, "0");
+  return `${year}.${month}.${date} ${hours}:${minutes}:${seconds}`;
 };
 
 // 글쓰기 object 생성
@@ -49,8 +52,8 @@ const contentTitle = document.querySelector("#content_title");
 const contents = "";
 const originUrl = window.location.origin;
 
-const testBtn = document.querySelector("#submit_btn");
-testBtn.addEventListener("click", async (event) => {
+const submitBtn = document.querySelector("#submit_btn");
+submitBtn.addEventListener("click", async (event) => {
   event.preventDefault();
   // form data 가져오기
   write.userId = userId.value;

@@ -27,11 +27,14 @@
   position: relative;
 }
 
-.view-contents__info > div:nth-child(2) {
+.view-contents__info .view-contents__text-group {
   font-size: 2rem;
 }
+.view-contents__info .view-contents__text-group > span:first-child {
+  margin-right: 0.5rem;
+}
 
-.viewer-wrapper {
+.view-wrapper {
   border: 0.1rem solid var(--border-color);
   padding: 3rem 4rem;
   margin-top: 10rem;
@@ -42,6 +45,7 @@
   position: absolute;
   bottom: -5.5rem;
   right: 0;
+  display: flex;
 }
 .view-btn {
   background-color: var(--button-back-color);
@@ -50,7 +54,123 @@
   border-radius: 0.5rem;
   font-size: 1.6rem;
   transition: background-color 0.5s ease-in;
+  display: flex;
+  justify-content: center;
+  margin: 0 0.5rem;
 }
 .view-btn:hover {
   background-color: var(--button-back-color-hover);
+}
+
+.update-prompt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+label,
+legend {
+  display: none;
+}
+.update-prompt__input-group {
+  width: 30%;
+  height: 30%;
+  min-width: 50rem;
+  min-height: 30rem;
+  position: relative;
+}
+
+.update-prompt__input-group > form {
+  height: 100%;
+  background-color: var(--dark-back-color);
+  border-radius: 3rem;
+}
+.update-prompt__input-group > form > fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.update-prompt__input-group > form > fieldset > span {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
+.update-prompt__input-group > form > fieldset > div {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.update-prompt__input-group > form > fieldset input {
+  width: 70%;
+}
+.update-btn {
+  padding: 1.42rem 1rem;
+  background-color: var(--button-back-color);
+  transition: background-color 0.3s ease-in;
+  position: absolute;
+  bottom: 0;
+  right: calc(16.9% - 2rem);
+  border-radius: 0.5rem;
+}
+.update-btn:hover {
+  background-color: var(--button-back-color-hover);
+}
+.update-prompt__close-btn,
+.delete-prompt__close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.update-prompt__close-btn > button {
+  background-color: var(--button-back-color);
+  padding: 1.8rem 2rem;
+  border-radius: 2.5rem;
+  transition: background-color 0.5s ease-in;
+}
+
+.update-prompt__close-btn > button:hover {
+  background-color: var(--button-back-color-hover);
+}
+
+.delete-prompt__close-btn > button {
+  background-color: var(--button-back-color-del);
+  padding: 1.8rem 2rem;
+  border-radius: 2.5rem;
+  transition: background-color 0.5s ease-in;
+}
+
+.delete-prompt__close-btn > button:hover {
+  background-color: var(--button-back-color-del-hover);
+}
+
+.hidden {
+  display: none;
+}
+
+.delete_btn {
+  background-color: var(--button-back-color-del);
+}
+
+.delete_btn:hover {
+  background-color: var(--button-back-color-del-hover);
+}
+
+.delete-prompt__fieldset input::placeholder {
+  color: var(--button-back-color-del-hover);
+  opacity: 0.6;
+}
+.delete-prompt__fieldset input:focus {
+  border-color: var(--button-back-color-del-hover);
+  box-shadow: 0 0 1rem var(--button-back-color-del-hover);
 }

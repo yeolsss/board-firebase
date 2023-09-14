@@ -27,21 +27,66 @@
       <!--제목, 글쓴이, 등록일-->
       <section class="view-contents__info">
         <h1 id="title">제목</h1>
-        <div>
+        <div class="view-contents__text-group">
           <span id="user_name">권경열</span>
           <span id="reg_date">2023.09.14</span>
           <input type="hidden" id="user_id" />
         </div>
         <div class="view-btn-group">
-          <button class="view-btn update">글수정</button>
-          <button class="view-btn delete">글삭제</button>
+          <button id="update_prompt_open" class="view-btn update">
+            글수정
+          </button>
+          <button id="delete_prompt_open" class="view-btn delete_btn">
+            글삭제
+          </button>
         </div>
       </section>
 
-      <div class="viewer-wrapper">
+      <div class="view-wrapper">
         <div id="viewer"></div>
       </div>
     </main>
+
+    <!--프롬프트 만들기-->
+    <div id="update_prompt" class="update-prompt hidden">
+      <div class="update-prompt__input-group">
+        <form>
+          <fieldset>
+            <legend>업데이트 비밀번호 입력</legend>
+            <span>비밀번호를 입력하세요.</span>
+            <label for="view_password">password</label>
+            <div>
+              <input type="password" id="view_password" />
+              <button id="update-confirm" class="update-btn">확인</button>
+            </div>
+          </fieldset>
+        </form>
+        <div class="update-prompt__close-btn">
+          <button id="update_prompt_close">X</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="delete_prompt" class="update-prompt hidden">
+      <div class="update-prompt__input-group">
+        <form>
+          <fieldset class="delete-prompt__fieldset">
+            <legend>삭제 비밀번호 입력</legend>
+            <span>비밀번호를 입력하세요.</span>
+            <label for="view_password">password</label>
+            <div>
+              <input type="password" id="delete_view_password" />
+              <button id="delete-confirm" class="update-btn delete_btn">
+                확인
+              </button>
+            </div>
+          </fieldset>
+        </form>
+        <div class="delete-prompt__close-btn">
+          <button id="delete_prompt_close">X</button>
+        </div>
+      </div>
+    </div>
 
     <script type="module" src="./js/firebase.js"></script>
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>

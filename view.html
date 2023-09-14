@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor-viewer.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://nhn.github.io/tui.editor/latest/dist/cdn/theme/toastui-editor-dark.css"
+    />
+    <link rel="stylesheet" href="./css/view.css" />
+  </head>
+  <body>
+    <header class="board-header">
+      <h1 class="board-header__title">
+        <a class="board-header__link" href="#"> Firebase 게시판 </a>
+      </h1>
+    </header>
+
+    <main class="view-contents-wrapper">
+      <!--제목, 글쓴이, 등록일-->
+      <section class="view-contents__info">
+        <h1 id="title">제목</h1>
+        <div>
+          <span id="user_name">권경열</span>
+          <span id="reg_date">2023.09.14</span>
+        </div>
+        <div class="view-btn-group">
+          <button class="view-btn update">글수정</button>
+          <button class="view-btn delete">글삭제</button>
+        </div>
+      </section>
+
+      <div class="viewer-wrapper">
+        <div id="viewer"></div>
+      </div>
+    </main>
+
+    <script type="module" src="./js/firebase.js"></script>
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+    <script type="module" src="js/view.js"></script>
+  </body>
+</html>

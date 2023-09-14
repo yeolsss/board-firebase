@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase 게시판</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <header class="board-header">
+      <h1 class="board-header__title">
+        <a class="board-header__link" href="#"> Firebase 게시판 </a>
+      </h1>
+    </header>
+
+    <main class="board-contents">
+      <section class="board-contents__header">
+        <div><span>번호</span></div>
+        <div><span>제목</span></div>
+        <div><span>등록일</span></div>
+        <div><span>작성자</span></div>
+      </section>
+      <section class="board-contents__main">
+        <div class="board-contents__main-contents">
+          <div><span>1.</span></div>
+          <div>
+            <a href="#"
+              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex modi
+              oditvoluptates.</a
+            >
+          </div>
+          <div><span>2023.09.13</span></div>
+          <div><span>익명</span></div>
+        </div>
+        <div class="board-contents__main-contents">
+          <div><span>2.</span></div>
+          <div>
+            <a href="#"
+              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex modi
+              oditvoluptates.</a
+            >
+          </div>
+          <div><span>2023.09.13</span></div>
+          <div><span>익명</span></div>
+        </div>
+        <div class="board-contents__main-contents">
+          <div><span>3.</span></div>
+          <div>
+            <a href="#"
+              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex modi
+              oditvoluptates.</a
+            >
+          </div>
+          <div><span>2023.09.13</span></div>
+          <div><span>익명익</span></div>
+        </div>
+      </section>
+      <section class="board-contents__btn-group">
+        <div id="write_board" class="board-contents__btn-group__write-btn">
+          <a href="#">글쓰기</a>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./js/firebase.js"></script>
+    <script type="module" src="./js/add_board.js"></script>
+  </body>
+</html>

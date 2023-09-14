@@ -1,0 +1,52 @@
+@import url("./base.css");
+
+/* contents */
+.board-header {
+  height: 8rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 1.5rem 0 0 6rem;
+}
+.board-header .board-header__link {
+  font-size: 4rem;
+}
+
+label,
+legend {
+  display: none;
+}
+
+fieldset {
+  position: relative;
+}
+
+.create-data-wrapper {
+  max-width: 144rem;
+  margin: 5rem auto 0;
+  height: auto;
+  position: relative;
+}
+
+.create-data-group {
+  margin-bottom: 1rem;
+}
+
+.create-data-group.title > input {
+  width: 60rem;
+}
+
+.submit-btn a {
+  position: absolute;
+  right: 0;
+  bottom: -5rem;
+}
+.submit-btn a {
+  color: var(--button-font-color);
+  background-color: var(--button-back-color);
+  font-size: 1.6rem;
+  padding: 0.2rem 2rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.5s ease-in;
+  cursor: pointer;
+}

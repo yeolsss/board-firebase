@@ -1,0 +1,82 @@
+@import url("./base.css");
+
+/* contents */
+.board-header {
+  height: 8rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 1.5rem 0 0 6rem;
+}
+.board-header .board-header__link {
+  font-size: 4rem;
+}
+
+.board-contents {
+  max-width: 144rem;
+  margin: 5rem auto 0;
+  height: auto;
+  border-top: 0.2rem solid var(--border-color);
+  border-bottom: 0.2rem solid var(--border-color);
+  position: relative;
+}
+
+.board-contents__header,
+.board-contents__main-contents {
+  width: 100%;
+  display: flex;
+}
+.board-contents__header div:first-child,
+.board-contents__main-contents div:first-child {
+  max-width: 10rem;
+  width: 100%;
+}
+.board-contents__header div:nth-child(2),
+.board-contents__main-contents div:nth-child(2) {
+  flex-grow: 1;
+}
+.board-contents__header div:nth-child(3),
+.board-contents__main-contents div:nth-child(3) {
+  max-width: 18rem;
+  width: 100%;
+}
+.board-contents__header div:last-child,
+.board-contents__main-contents div:last-child {
+  max-width: 18rem;
+  width: 100%;
+}
+
+.board-contents__header {
+  text-align: center;
+  font-size: 2rem;
+  border-bottom: 0.15rem solid var(--border-color);
+  padding: 1.5rem 0 1.5rem 0;
+}
+.board-contents__main-contents {
+  text-align: center;
+  font-size: 1.6rem;
+  padding: 1.2rem 0 1.2rem 0;
+}
+
+.board-contents__main-contents:not(:last-child) {
+  border-bottom: 0.1rem solid var(--border-color);
+}
+
+.board-contents__btn-group {
+  position: absolute;
+  right: 0;
+  bottom: -5rem;
+}
+
+.board-contents__btn-group__write-btn a {
+  color: var(--button-font-color);
+  background-color: var(--button-back-color);
+  font-size: 1.6rem;
+  padding: 0.2rem 2rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.5s ease-in;
+}
+
+.board-contents__btn-group__write-btn a:hover {
+  background-color: var(--button-back-color-hover);
+}

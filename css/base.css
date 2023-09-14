@@ -1,0 +1,96 @@
+/*fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&family=Noto+Sans+KR:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&family=M+PLUS+Rounded+1c:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap");
+/* Reset */
+body {
+  margin: unset;
+  padding: unset;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: unset;
+  padding: unset;
+  font-size: unset;
+}
+
+a {
+  margin: unset;
+  padding: unset;
+  text-decoration: unset;
+  color: unset;
+}
+
+button {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+
+div {
+  margin: unset;
+  padding: unset;
+}
+fieldset {
+  margin: unset;
+  padding: unset;
+  border: unset;
+}
+
+input {
+  margin: unset;
+  padding: unset;
+  font-size: unset;
+  background-color: unset;
+  border: unset;
+}
+input:focus {
+  outline: none;
+}
+/* Typography */
+:root {
+  --main-font-color: rgba(255, 255, 255, 0.9);
+  --dark-back-color: #202023;
+  --main-font-family: "M PLUS Rounded 1c", "Nanum Gothic", "Noto Sans KR",
+    sans-serif;
+  --border-color: rgba(255, 255, 255, 0.5);
+  --button-font-color: #1a202c;
+  --button-back-color: #81e6d9;
+  --button-back-color-hover: #4fd1c5;
+  --input-color: rgba(255, 255, 255, 0.8);
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  color: var(--main-font-color);
+  background-color: var(--dark-back-color);
+  font-family: var(--main-font-family);
+}
+
+input {
+  color: var(--input-color);
+  border: 0.1rem solid var(--border-color);
+  height: 3.2rem;
+  width: 20rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  vertical-align: middle;
+}
+input::placeholder {
+  color: var(--button-back-color-hover);
+  opacity: 0.6;
+}
+input:focus {
+  border-color: var(--button-back-color-hover);
+  box-shadow: 0 0 1rem var(--button-back-color-hover);
+}

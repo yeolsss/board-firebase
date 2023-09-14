@@ -1,0 +1,56 @@
+@import url("./base.css");
+
+/* contents */
+.board-header {
+  height: 8rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 1.5rem 0 0 6rem;
+}
+.board-header .board-header__link {
+  font-size: 4rem;
+}
+
+.view-contents-wrapper {
+  max-width: 144rem;
+  margin: 5rem auto 0;
+  height: auto;
+  position: relative;
+}
+
+.view-contents__info {
+  display: flex;
+  font-size: 3.5rem;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.view-contents__info > div:nth-child(2) {
+  font-size: 2rem;
+}
+
+.viewer-wrapper {
+  border: 0.1rem solid var(--border-color);
+  padding: 3rem 4rem;
+  margin-top: 10rem;
+  border-radius: 1rem;
+}
+
+.view-btn-group {
+  position: absolute;
+  bottom: -5.5rem;
+  right: 0;
+}
+.view-btn {
+  background-color: var(--button-back-color);
+  color: var(--button-font-color);
+  padding: 0.6rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  transition: background-color 0.5s ease-in;
+}
+.view-btn:hover {
+  background-color: var(--button-back-color-hover);
+}

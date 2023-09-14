@@ -13,7 +13,6 @@ const boardRef = collection(db, "board");
 
 // editor 생성
 const { Editor } = toastui;
-
 const editor = new Editor({
   el: document.querySelector("#editor"),
   previewStyle: "vertical",
@@ -48,6 +47,7 @@ const userName = document.querySelector("#user_name");
 const userPassword = document.querySelector("#user_password");
 const contentTitle = document.querySelector("#content_title");
 const contents = "";
+const originUrl = window.location.origin;
 
 const testBtn = document.querySelector("#submit_btn");
 testBtn.addEventListener("click", async (event) => {
@@ -66,9 +66,15 @@ testBtn.addEventListener("click", async (event) => {
   await setDoc(doc(boardRef, `${docId}`), write)
     .then((refDoc) => {
       // 등록완료
-      location.href = `../viewer.html?doc_id=${docId}`;
+      location.href = `${originUrl}/board-firebase/view.html?doc_id=${docId}`;
     })
     .catch((error) => {
       console.error(error);
     });
+});
+
+// homebtn
+const homeBtn = document.querySelector("#home_btn");
+homeBtn.addEventListener("click", () => {
+  location.href = `${originUrl}/board-firebase/index.html`;
 });

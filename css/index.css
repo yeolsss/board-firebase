@@ -61,6 +61,7 @@
 .board-contents__main-contents {
   text-align: center;
   font-size: 1.6rem;
+  transition: background-color 0.5s ease-in;
 }
 
 .board-contents__main-contents:not(:last-child) {
@@ -84,4 +85,10 @@
 
 .board-contents__btn-group__write-btn a:hover {
   background-color: var(--button-back-color-hover);
+}
+
+.board-contents__main-contents:hover {
+  background-color: #81e6d9;
+  opacity: 0.8;
+  color: var(--button-font-color);
 }

@@ -6,8 +6,6 @@ import {
   getFirestore,
   query,
   orderBy,
-  limit,
-  startAfter,
   getCountFromServer,
 } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
 

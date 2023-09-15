@@ -23,6 +23,19 @@
         <div><span>작성자</span></div>
       </section>
       <section id="board-list" class="board-contents__main"></section>
+      <section class="board-contents__search-group">
+        <div class="board-contents__search-container">
+          <label for="search_input">
+            <input
+              type="text"
+              id="search_input"
+              class="search-input"
+              placeholder="검색어"
+            />
+          </label>
+          <button id="search_btn" class="search-btn">검색</button>
+        </div>
+      </section>
       <section class="board-contents__btn-group">
         <div id="write_board" class="board-contents__btn-group__write-btn">
           <a href="#">글쓰기</a>
@@ -31,7 +44,6 @@
     </main>
 
     <script type="module" src="./js/firebase.js"></script>
-    <!--<script type="module" src="./js/add_board.js"></script>-->
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>

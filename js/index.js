@@ -7,14 +7,51 @@ import {
   query,
   orderBy,
   getCountFromServer,
+  startAt,
+  endAt,
 } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
 
 const db = getFirestore(app);
 
 const boardRef = collection(db, "board");
-const boardQuery = query(boardRef, orderBy("regDate", "desc"));
-const docSnapshots = await getDocs(boardQuery);
+let boardQuery = query(boardRef, orderBy("regDate", "desc"));
 const boardList = document.querySelector("#board-list");
+
+// 검색어 확인
+const searchInput = document.querySelector("#search_input");
+const searchBtn = document.querySelector("#search_btn");
+
+const getDoc = async (paramDocs) => {
+  const getListDoc = await getDocs(paramDocs);
+  createList(getListDoc);
+};
+
+const checkSearchKeyword = () => {
+  const searchKeyword = searchInput.value;
+  // 검색어가 없을때
+  if (searchKeyword === "") {
+    boardQuery = query(boardRef, orderBy("regDate", "desc"));
+    getDoc(boardQuery);
+
+    // 검색어가 있을때
+  } else {
+    boardQuery = query(
+      boardRef,
+      orderBy("title"),
+      startAt(searchKeyword),
+      endAt(searchKeyword + "\uf8ff"),
+    );
+    getDoc(boardQuery);
+  }
+};
+// 처음 화면 로딩
+checkSearchKeyword();
+
+//검색 버튼 눌렀을 때
+searchBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  checkSearchKeyword();
+});
 
 const originUrl = window.location.origin;
 const currentUrl = window.location;
@@ -31,9 +68,11 @@ let docCount = docCountOrigin.data().count;
 
 
 */
-docSnapshots.forEach((contents) => {
-  let content = document.createElement("div");
-  content.innerHTML = `
+const createList = (docSnapshots) => {
+  boardList.innerHTML = "";
+  docSnapshots.forEach((contents) => {
+    let content = document.createElement("div");
+    content.innerHTML = `
   <div class="board-contents__main-contents">
           <div><span>${docCount--}.</span></div>
           <div>
@@ -47,18 +86,9 @@ docSnapshots.forEach((contents) => {
           <div><span>${contents.data().userName}</span></div>
         </div>
   `;
-  boardList.append(content);
-});
-
-/*await getDocs(boardQuery).then((refDoc) => {
-  refDoc.forEach((item, index) => {
-    console.log(item.data(), index);
+    boardList.append(content);
   });
-});
-const lastVisible = docSnapshots.docs[docSnapshots.docs.length - 1];
-console.log("last", lastVisible);
-
-*/
+};
 
 const writeBtn = document.querySelector("#write_board > a");
 writeBtn.addEventListener("click", () => {
